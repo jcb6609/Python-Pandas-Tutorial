@@ -1,0 +1,29 @@
+/////////////////////////////////////////////////////////////////////////////////////////////
+Python Pandas Tutorial (Part 2): 
+    - DataFrame and Series Basics - Selecting Rows and Columns 
+
+File --> Pandas_clean_demo
+////////////////////////////////////////////////////////////////////////////////////////////
+We will:
+    - How can we think of dataframes and series data types in a different way 
+    - Basics of getting info from these data types 
+
+--> previous video making sure our data was loaded correctly 
+
+Dataframe: a table with rows and columns
+
+//Cleaned up code from last video: 
+
+import pandas as pd
+
+df = pd.read_csv('data/results.csv')
+schema_df = pd.read_csv('data/schema.csv')
+
+pd.set_option('display.max_columns, 85)
+pd.set_option('display.max_rows, 85)
+
+df.head()
+
+//
+How to think of dataframes using native Python:
+    ~ Dictionaries
