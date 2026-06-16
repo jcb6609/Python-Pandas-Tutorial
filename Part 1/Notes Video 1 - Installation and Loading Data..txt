@@ -1,0 +1,99 @@
+Pandas Tutorials by Corey Schafer
+/////////////////////////////////////////////////////////////////////////////////////////////
+Python Pandas Tutorial (Part 1): 
+    - Getting Started with Data Analysis - Installation and Loading Data.
+
+FILE --> Pandas Demo
+/////////////////////////////////////////////////////////////////////////////////////////////
+We will learn how to use the pandas library in python
+    - What is pandas?
+        ~ Pandas is a data analysis library that allows us to easily work with different types 
+          of data.
+We will learn about:
+    - How to get pandas installed,
+    - How to download the data used for the series
+    - How to install jupyter 
+
+To install pandas:
+    $ pip install pandas
+
+    - General description:
+	~ $: command line prompt
+	~ pip: Calls Python's standard package manager. It is an online tools that connects to
+             an online repository called the Python Package Index (PyPI) to fetch packages.
+	~ install: Command that tells pip that we want to downlaod and set up a new package.
+	~ pandas: This is the name of the target library. Pandas is an incredibly popular 
+                open-source tool used for data manipulation, cleaning, and analysis.
+
+To install jupyter:
+    $ pip install jypyerlab
+
+    Note: if it does not work by itself then also try:
+    python -m pip install notebook
+
+    launch jupyter notebook: 
+    python -m notebook    -->    Runs jupyter server, command prompt must be active to open
+                                 Jupyter (which runs in a browser).
+
+    ...
+
+Now we need to download the data used for the series:
+    - StackOverflow Developer Survey.
+    - Reason: Real-reliable-realistic world data
+    - Give some sonse of the actual process of downloading data from a source so it can be 
+      analyzed with pandas.
+    - 2019 data.
+    - Extract zip --> organize everty file (four files) into a single folder --> change the 
+      folder's name into "data".
+    - Files in directory:
+	~ site (folder)
+        ~ results.csv
+        ~ schema.csv
+	~ survey.pdf
+
+    ...
+
+Continuing back in Jupyter (browser):
+    - To create a new Notebook:
+        ~ Click on new --> then Python 3
+
+Lines of code so far:
+--> import pandas as pd
+--> df = pd.read_csv(data/results.csv)
+
+CSV: Comma-separated values
+
+// Summary of what we did in the First video:
+
+import pandas as pd                      # import pandas library as pd (module object) --> object that contains all functionalities of the Pandas library.
+
+df = pd.read_csv('data/results.csv')     # creation of a df (dataframe) variable that reads the content of our csv through the pandas pd module object referenced to the method .read_csv('path') 
+df.head()                                # variable df is referenced to the method .head() which prints the first 5 data rows of our previously stored/defined dataframe df
+
+df.shape                                 # df var referenced to the attribute .shape. It shows the number of (rows, columns)
+
+pd.set_option('display.max_columns', 85) # module object pd referenced to the method .set_option("...", ...) which let us configure the pandas library to show up to 85 columns simultaneously when printing DataFrames, preventing hidden columns
+                                         # It takes two arguments: 1). The option name to modify (display limit either max or other for either columns or rows (hidden content by default))
+                                         #                         2). The new integer value (in this case 85) which is the max number of columns (or rows depending on the 1). argument set) we saw previously using ds.shape 
+
+# Repeat for our other csv file scheme.csv which contains the descirption of each column name:
+
+scheme_df = pd.read_csv('data/scheme.csv')
+pd.set_option('display.max_rows', 85)
+scheme_df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
